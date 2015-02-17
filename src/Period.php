@@ -3,6 +3,9 @@ namespace Calendar;
 
 use League\Period\Period as BasePeriod;
 
+/**
+ * @author Florent Viel <florent.viel69@gmail.com>
+ */
 class Period implements PeriodInterface
 {
     protected $period;
