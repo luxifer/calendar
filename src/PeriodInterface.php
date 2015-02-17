@@ -1,6 +1,9 @@
 <?php
 namespace Calendar;
 
+/**
+ * @author Florent Viel <florent.viel69@gmail.com>
+ */
 interface PeriodInterface
 {
     /**
