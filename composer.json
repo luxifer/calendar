@@ -1,0 +1,19 @@
+{
+    "name": "luxifer/calendar",
+    "description": "Library to compute lists of periods a.k.a calendar",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Florent Viel",
+            "email": "florent.viel69@gmail.com"
+        }
+    ],
+    "require": {
+        "doctrine/collections": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Calendar\\": "src/"
+        }
+    }
+}
