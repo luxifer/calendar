@@ -40,4 +40,10 @@ interface PeriodInterface
      * @return \DateInterval
      */
     public function getDuration();
+
+    /**
+     * Returns a loop for an interval
+     * @return \DatePeriod
+     */
+    public function getRange($interval);
 }

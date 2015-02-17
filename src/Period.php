@@ -2,12 +2,15 @@
 namespace Calendar;
 
 use League\Period\Period as BasePeriod;
+use UnexpectedValueException;
 
 /**
  * @author Florent Viel <florent.viel69@gmail.com>
  */
-class Period implements PeriodInterface
+class Period implements EquatablePeriodInterface
 {
+    public $content;
+
     protected $period;
 
     public function __construct($start, $end)
@@ -51,8 +54,22 @@ class Period implements PeriodInterface
         return $this->period->getDuration();
     }
 
-    protected function setPeriod(BasePeriod $period)
+    public function getRange($interval)
+    {
+        return $this->period->getRange($interval);
+    }
+
+    public function setPeriod(BasePeriod $period)
     {
         $this->period = $period;
+    }
+
+    public function equals($period)
+    {
+        if (!$period instanceof Period) {
+            throw new UnexpectedValueException('Compared period must have the same class.');
+        }
+
+        return $this->content === $period->content;
     }
 }
